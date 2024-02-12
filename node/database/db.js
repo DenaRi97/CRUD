@@ -7,3 +7,5 @@ const db = new Sequelize ('database_app', 'root', '',{
 })
 
 export default db
+
+//IMPORTANTE, al crear la DB en XAMPP hay que especificar que el numero 1 de los ids(o de la tabla) tenga auto-incremento para que las nuevas entradas se vayan registrando en orden: estructura> accion, cambiar> marcar A.I> guardar

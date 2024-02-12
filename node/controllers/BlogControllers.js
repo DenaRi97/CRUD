@@ -63,3 +63,5 @@ export const deleteBlog = async (req,res) => {
         res.json( {message: error.message} )
     }
 }
+
+//IMPORTANTE, al crear la DB en XAMPP hay que especificar que el numero 1 de los ids(o de la tabla) tenga auto-incremento para que las nuevas entradas se vayan registrando en orden: estructura> accion, cambiar> marcar A.I> guardar
