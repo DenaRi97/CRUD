@@ -3,34 +3,26 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
 //REGISTER
+// Registration endpoint
 router.post("/register", async (req, res) => {
-
-  const {username, email, password} = req.body
   try {
-    const salt = await bcrypt.genSalt(10);
-    const hashedPass = await bcrypt.hash(password, salt);
-    // const newUser = new User({
-    //   username: req.body.username,
-    //   email: req.body.email,
-    //   password: hashedPass,
-    // });
-
-    
-    console.log(username, email, hashedPass)
-
-    
-    // console.log(User)
-
+    //hashing the passwrd so its protectes
+    const salt = await bcrypt.genSalt(10);//nº of characters of the hash
+    const hashedPass = await bcrypt.hash(req.body.password, salt);
+    // Create a new user instance based on the request body
     const newUser = new User({
-      username: username,
-      email: email,
-      password: hashedPass
-    })
+      username: req.body.username,
+      email: req.body.email,
+      password: hashedPass,
+    });
 
-    await newUser.save();
-    res.status(200).json(newUser);
+    // Save the new user to the database
+    const user = await newUser.save();
+    res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);
+    // Handle errors appropriately
+    // In a production environment, avoid sending detailed error messages to clients for security reasons
   }
 });
 
