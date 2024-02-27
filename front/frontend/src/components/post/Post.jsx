@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
   const PF = "http://localhost:5000/images/";
+  // console.log(post)
   return (
     <div className="post">
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
-          {post.categories.map((c) => (
-            <span className="postCat">{c.name}</span>
+          {post.map((c) => (
+            <div key={c._id}>
+              <span className="postCat">{c.categories}</span>
+            </div>
           ))}
         </div>
         <Link to={`/post/${post._id}`} className="link">

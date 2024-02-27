@@ -13,9 +13,9 @@ export default function Write() {
     e.preventDefault();
     const newPost = {
       username: user.username,
-      title,
-      desc,
-    };
+      title: title,
+      content: desc,
+    }; console.log(title, desc)
     if (file) {
       const data =new FormData();
       const filename = Date.now() + file.name;

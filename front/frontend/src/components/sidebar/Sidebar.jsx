@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 
-export default function Sidebar() {
+const Sidebar = () => {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
@@ -48,3 +48,5 @@ export default function Sidebar() {
     </div>
   );
 }
+
+export default Sidebar;
