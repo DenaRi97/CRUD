@@ -3,6 +3,9 @@ import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
 
+// ERROR in ./src/pages/write/Write.jsx 8:0-48
+// Module not found: Error: Can't resolve '../../context/Context' in 'C:\Users\Administrator\Documents\BOOTCAMP FS+CIBER\EJERCICIOS\10 CRUD\blog\front\frontend\src\pages\write'
+
 export default function Write() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

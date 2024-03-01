@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
+import mongoose from "mongoose";
 
 
 const PostSchema = new mongoose.Schema({
@@ -29,6 +30,8 @@ const PostSchema = new mongoose.Schema({
 { timestamps: true } //update time
 );
 
+export default PostSchema;
+
 //structure to export from mongoose
-const Post = mongoose.model("Post", PostSchema);
-module.exports = Post
+// const Post = mongoose.model("Post", PostSchema);
+// module.exports = Post

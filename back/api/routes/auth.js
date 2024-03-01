@@ -1,6 +1,13 @@
-const router = require("express").Router();
-const User = require("../models/User");
-const bcrypt = require("bcrypt");
+// const router = require("express").Router();
+import express from "express";
+// const User = require("../models/User");
+// const bcrypt = require("bcrypt");
+import User from "../models/User.js";
+import bcrypt from "bcrypt"
+// import router from "./users.js";
+
+const router = express.Router();
+
 
 //REGISTER
 // Registration endpoint
@@ -42,7 +49,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = router;
+// module.exports = router;
+
+export default router;
 
 
 
